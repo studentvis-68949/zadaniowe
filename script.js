@@ -78,3 +78,18 @@ if (form) {
     }
   });
 }
+
+fetch("data.json")
+  .then(response => response.json())
+  .then(data => {
+    const list = document.getElementById("projekty-list");
+
+    if (list) {
+      data.projekty.forEach(projekt => {
+        const li = document.createElement("li");
+        li.textContent = projekt;
+        list.appendChild(li);
+      });
+    }
+  })
+  .catch(error => console.log("Błąd:", error));
