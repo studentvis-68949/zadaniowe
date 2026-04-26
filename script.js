@@ -82,14 +82,26 @@ if (form) {
 fetch("data.json")
   .then(response => response.json())
   .then(data => {
-    const list = document.getElementById("projekty-list");
 
-    if (list) {
+    // PROJEKTY
+    const projektyList = document.getElementById("projekty-list");
+    if (projektyList) {
       data.projekty.forEach(projekt => {
         const li = document.createElement("li");
         li.textContent = projekt;
-        list.appendChild(li);
+        projektyList.appendChild(li);
       });
     }
+
+    // UMIEJĘTNOŚCI
+    const skillsList = document.getElementById("skills-list");
+    if (skillsList) {
+      data["Umiejętności"].forEach(skill => {
+        const li = document.createElement("li");
+        li.textContent = skill;
+        skillsList.appendChild(li);
+      });
+    }
+
   })
   .catch(error => console.log("Błąd:", error));
