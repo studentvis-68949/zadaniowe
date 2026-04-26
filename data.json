@@ -1,4 +1,11 @@
 {
+  "Umiejętności": [
+    "Html",
+    "Css",
+    "JavaScript",
+    "React",
+    "Git - baze"
+  ],
   "projekty": [
     "Validation-project",
     "Projekt-CRUD",
