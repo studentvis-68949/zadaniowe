@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="theme-style" rel="stylesheet" href="red.css">
+    <title>CV-68949</title>
+</head>
+<body>
+
+    <header>
+        <h1>Ilya Raiko - 68949</h1>
+    </header>
+
+    <div>
+        <button onclick="changeTheme()">Zmień motyw</button>
+        <button onclick="toggleCV()">Pokaż / Ukryj CV</button>
+
+        <button onclick="showSection('projekty')">Projekty</button>
+        <button onclick="showSection('doswiadczenie')">Doświadczenie</button>
+        <button onclick="showSection('edukacja')">Edukacja</button>
+    </div>
+
+    <main>
+
+        <section id="cv">
+            <header>
+                <h2>Kontakt</h2>
+            </header>
+            <address>
+                📍Miasto: Warszawa<br>
+                <a href="mailto:ilyaraiko6@gmail.com">ilyaraiko6@gmail.com</a><br>
+                <a href="tel:+48537681553">+48537681553</a>
+            </address>
+        </section>
+
+        <section>
+            <header>
+                <h2>Znajdź mnie online</h2>
+            </header>
+
+            <p>
+                <a href="https://github.com/MikiSatos" target="_blank">
+                    GitHub
+                </a>
+            </p>
+
+            <p>
+                <a href="https://www.linkedin.com/in/yourusername/" target="_blank">
+                    LinkedIn
+                </a>
+            </p>
+        </section>
+
+        <section>
+            <header>
+                <h2>O mnie</h2>
+            </header>
+
+            <img src="ProjektCV.jpg" alt="Foto mnie" width="15%">
+        </section>
+
+        <section id="Umiejętności">
+            <header>
+                <h2>Umiejętności</h2>
+            </header>
+            
+            <ul id="skills-list"></ul>
+        </section>
+
+        <section id="doswiadczenie">
+            <header>
+                <h2>Doświadczenie</h2>
+            </header>
+            
+            <article>
+                <h3>Frontend Developer</h3>
+                <p>XYZ Company</p>
+            </article>
+        </section>
+
+        <section id="edukacja">
+            <header>
+                <h2>Edukacja</h2>
+            </header>
+
+            <article>
+                <h3>Politechnika Warszawska</h3>
+            </article>
+        </section>
+
+        <section id="projekty">
+            <header>
+                <h2>Projekty</h2>
+            </header>
+
+            <ul id="projekty-list"></ul>
+        </section>
+
+        <section>
+            <header>
+                <h2>Kontakt (formularz)</h2>
+            </header>
+
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Imię">
+                <div class="error" id="nameError"></div>
+
+                <input type="text" id="surname" placeholder="Nazwisko">
+                <div class="error" id="surnameError"></div>
+
+                <input type="text" id="email" placeholder="Email">
+                <div class="error" id="emailError"></div>
+
+                <textarea id="message" placeholder="Wiadomość"></textarea>
+                <div class="error" id="messageError"></div>
+
+                <button type="submit">Wyślij</button>
+            </form>
+
+            <div id="successMessage" class="success"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Ilya Raiko</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

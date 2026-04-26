@@ -1,0 +1,15 @@
+{
+  "Umiejętności": [
+    "Html",
+    "Css",
+    "JavaScript",
+    "React",
+    "Git"
+  ],
+
+  "projekty": [
+    "Validation-project",
+    "Projekt-CRUD",
+    "Nowy projekt JS"
+  ]
+}
