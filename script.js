@@ -105,3 +105,55 @@ fetch("data.json")
 
   })
   .catch(error => console.log("Błąd:", error));
+
+// ===== ZADANIE 7 (LOCAL STORAGE) =====
+
+function addProject() {
+  const input = document.getElementById("newProject");
+  const value = input.value.trim();
+
+  if (value === "") return;
+
+  let projekty = JSON.parse(localStorage.getItem("projektyLS")) || [];
+
+  projekty.push(value);
+
+  localStorage.setItem("projektyLS", JSON.stringify(projekty));
+
+  input.value = "";
+
+  renderProjectsLS();
+}
+
+function renderProjectsLS() {
+  const list = document.getElementById("projekty-list");
+
+  let projekty = JSON.parse(localStorage.getItem("projektyLS")) || [];
+
+  projekty.forEach((projekt, index) => {
+    const li = document.createElement("li");
+    li.textContent = projekt;
+
+    const btn = document.createElement("button");
+    btn.textContent = "Usuń";
+    btn.style.marginLeft = "10px";
+
+    btn.onclick = () => removeProject(index);
+
+    li.appendChild(btn);
+    list.appendChild(li);
+  });
+}
+
+function removeProject(index) {
+  let projekty = JSON.parse(localStorage.getItem("projektyLS")) || [];
+
+  projekty.splice(index, 1);
+
+  localStorage.setItem("projektyLS", JSON.stringify(projekty));
+
+  location.reload(); // проще всего обновить
+}
+
+// запуск после загрузки
+document.addEventListener("DOMContentLoaded", renderProjectsLS);
